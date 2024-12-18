@@ -1,0 +1,554 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>DADY - Digital Services</title>
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="{% static 'img/DADY.png' %}" type="image/png">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://use.fontawesome.com/releases/v6.4.2/js/all.js" defer></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+	<!-- Navigation Bar -->
+	<header>
+		<div class="logo">
+			<img src="{% static 'img/DADY_LOGO.png' %}" alt="Dady logo">
+		</div>
+		<div class="menu-head">
+			<ul class="menu-content">
+				<li class="menu-list">
+					<div class="menu-item">
+						<div class="menu-text">Home</div>
+						<a class="menu-link" href="#">Home</a>
+					</div>
+				</li>
+				<li class="menu-list">
+					<div class="menu-item">
+						<div class="menu-text">About</div>
+						<a class="menu-link" href="#about">About</a>
+					</div>
+				</li>
+				<li class="menu-list">
+					<div class="menu-item">
+						<div class="menu-text">Services</div>
+						<a class="menu-link" href="#services">Services</a>
+					</div>
+				</li>
+				<li class="menu-list">
+					<div class="menu-item">
+						<div class="menu-text">Team</div>
+						<a class="menu-link" href="#team">Team</a>
+					</div>
+				</li>
+				<li class="menu-list">
+					<div class="menu-item">
+						<div class="menu-text">Contact</div>
+						<a class="menu-link" href="#contact">Contact</a>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="menu-icon">
+			<div onclick="menuOpen()" class="menu-open" id="menu-open">
+				<i class="fas fa-bars"></i>
+			</div>
+			<div onclick="menuClose()" class="menu-close" id="menu-close">
+				<i class="fas fa-times"></i>
+			</div>
+			<div class="menu-side-bar" id="menu-side-bar">
+				<ul>
+					<li><a class="menu-side-link" href="#">Home</a></li>
+					<li><a class="menu-side-link" href="#about">About</a></li>
+					<li><a class="menu-side-link" href="#services">Services</a></li>
+					<li><a class="menu-side-link" href="#team">Team</a></li>
+					<li><a class="menu-side-link" href="#contact">Contact</a></li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<div class="banner">
+		<div class="container">
+			{% if messages %}
+				{% for message in messages %}
+				<div id="notification" class="notification">
+					<p>{{message}}</p>
+					<div class="timer"></div>
+				</div>
+				{% endfor %}
+			{% endif %}
+			<div class="row">
+				<div class="col-6 banner-content">
+					<div class="banner-title">
+						<h1>DIGITAL<span><br>MARKETING</span></h1>
+						<p class="banner-text">At Dady Digital Marketing Services, we are dedicated to helping your business thrive in the digital age. Our innovative strategies and tailored solutions empower you to connect with your audience, boost your online presence, and achieve measurable growth.</p>
+						<button class="banner-btn">Know More</button>
+						<div class="brands">
+							<a class="icon" href="https://www.dadydigitalservices@gmail.com">
+								<i class="fas fa-envelope button__icon-anim mod--share">&#xe0be;</i>
+							</a>
+							<a class="icon" href="https://www.instagram.com/dady_digital_7/">
+								<i class="fa-brands fa-instagram">&#xf16d;</i>
+							</a>
+							<a class="icon" href="#">
+								<i class="fa-brands fa-facebook-f">&#xf09a;</i>
+							</a>
+							<a class="icon" href="#">
+								<i class="fa-brands fa-x-twitter"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-6 banner-img">
+					<img src="{% static 'img/Analysis-pana.svg' %}" alt="banner image">
+					<div class="mail-png">
+						<img src="{% static 'img/mail.png' %}">
+					</div>
+					<div class="thumbs-up-png">
+						<img src="{% static 'img/thumbs-up.png' %}">
+					</div>
+					<div class="horn-png">
+						<img src="{% static 'img/public-relation.png' %}">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="about-us" id="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-6 about-img-div">
+					<div class="about-img">
+						<img src="{% static 'img/Team-pana.svg' %}" alt="about image">
+					</div>
+				</div>
+				<div class="col-6 about-content-div">
+					<div class="about-content">
+						<div class="about-title">
+							<div class="about-line"></div>
+							<p>About Us</p>
+						</div>
+						<h2>Why Work With Us And How We Work?</h2>
+						<p>At DADY Digital Services, we specialize in delivering innovative digital marketing solutions that empower brands to grow and connect with their audience effectively. Our expert team is dedicated to providing tailored strategies that drive measurable results and help businesses achieve their goals.</p>
+						<div class="about-list">
+							<div class="list-item">
+								<i class="fa-solid fa-check"></i>
+								<p>Personalized strategies for your brand.</p>
+							</div>
+							<div class="list-item">
+								<i class="fa-solid fa-check"></i>
+								<p>Seamless collaboration and execution.</p>
+							</div>
+							<div class="list-item">
+								<i class="fa-solid fa-check"></i>
+								<p>Continuous optimization for success.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="services services-bg-img" id="services">
+		<div class="container">
+			<div class="service-shape">
+				<img src="{% static 'img/arrow.png' %}" alt="service-arrow">
+			</div>
+			<div class="service-title">
+				<div class="service-line"></div>
+				<p>Our Services</p>
+			</div>
+			<h2>From digital transformation to custom development, our solutions are designed to help you thrive in an ever-evolving market.</h2>
+			<div class="row">
+				<div class="col-3">
+					<div class="service-card">
+						<div class="card-icon">
+							<img src="{% static 'img/content-management.png' %}" alt="marketing-icon">
+						</div>
+						<div class="card-title">
+							<h2>Social Media Management</h2>
+						</div>
+						<div class="card-details">
+							<p>Growing your brand’s presence through effective social media strategies.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="service-card">
+						<div class="card-icon">
+							<img src="{% static 'img/campaign-marketing.png' %}" alt="marketing-icon">
+						</div>
+						<div class="card-title">
+							<h2>Marketing Awareness Campaigns</h2>
+						</div>
+						<div class="card-details">
+							<p>Strategic campaigns that capture attention and elevate brand visibility.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="service-card">
+						<div class="card-icon">
+							<img src="{% static 'img/improvement.png' %}" alt="marketing-icon">
+						</div>
+						<div class="card-title">
+							<h2>Brand Management</h2>
+						</div>
+						<div class="card-details">
+							<p>Building a consistent, compelling brand that resonates with audiences.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="service-card">
+						<div class="card-icon">
+							<img src="{% static 'img/content-creator.png' %}" alt="marketing-icon">
+						</div>
+						<div class="card-title">
+							<h2>Website Creation</h2>
+						</div>
+						<div class="card-details">
+							<p>Custom websites designed for optimal user experience and performance.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="service-card">
+						<div class="card-icon">
+							<img src="{% static 'img/create-content.png' %}" alt="marketing-icon">
+						</div>
+						<div class="card-title">
+							<h2>Content Writing</h2>
+						</div>
+						<div class="card-details">
+							<p>Engaging, SEO-optimized content that enhances your brand’s message.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="service-card">
+						<div class="card-icon">
+							<img src="{% static 'img/customer-service.png' %}" alt="marketing-icon">
+						</div>
+						<div class="card-title">
+							<h2>Customer Support Solutions</h2>
+						</div>
+						<div class="card-details">
+							<p>Efficient support services that ensure customer satisfaction and loyalty.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-2">
+					<div class="service-arrow">
+						<i class="fa-solid fa-arrow-right"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="workflow">
+		<div class="container workflow-flex">
+			<div class="workflow-left">
+				<div class="workflow-content">
+					<div class="workflow-title">
+						<div class="workflow-line"></div>
+						<p>How We Work</p>
+					</div>
+					<h2 class="workflow-text">Steps to Achieve Meaningful and Lasting Results</h2>
+					<div class="workflow-img">
+						<img src="{% static 'img/agile method-amico.svg' %}" alt="workflow-image">
+					</div>
+				</div>
+			</div>
+			<div class="workflow-right">
+				<div class="workflow-step">
+					<div class="timeline-circle">
+						<div class="timeline-circle-dot"></div>
+					</div>
+					<div class="approach-step">
+						<div class="approach-step-left">
+							<h3 class="approach-number">1</h3>
+						</div>
+						<div class="approach-step-right">
+							<h3 class="approach-title">Understanding Your Needs</h3>
+							<div class="approach-text">
+								We begin with in-depth discussions to comprehend your goals, challenges, and audience, ensuring we are aligned with your vision.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="workflow-step">
+					<div class="timeline-circle">
+						<div class="timeline-circle-dot"></div>
+					</div>
+					<div class="approach-step">
+						<div class="approach-step-left">
+							<h3 class="approach-number">2</h3>
+						</div>
+						<div class="approach-step-right">
+							<h3 class="approach-title">Research and Insights</h3>
+							<div class="approach-text">
+								Our team conducts market research, analyzes competitors, and identifies key trends to craft a data-driven approach tailored to your needs.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="workflow-step">
+					<div class="timeline-circle">
+						<div class="timeline-circle-dot"></div>
+					</div>
+					<div class="approach-step">
+						<div class="approach-step-left">
+							<h3 class="approach-number">3</h3>
+						</div>
+						<div class="approach-step-right">
+							<h3 class="approach-title">Strategy Development</h3>
+							<div class="approach-text">
+								We create a customized roadmap with clear objectives, actionable steps, and measurable outcomes to guide the project toward success.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="workflow-step">
+					<div class="timeline-circle">
+						<div class="timeline-circle-dot"></div>
+					</div>
+					<div class="approach-step">
+						<div class="approach-step-left">
+							<h3 class="approach-number">4</h3>
+						</div>
+						<div class="approach-step-right">
+							<h3 class="approach-title">Design and Ideation</h3>
+							<div class="approach-text">
+								Bringing your ideas to life, we focus on crafting visually engaging, user-centric designs that leave a lasting impression.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="workflow-step">
+					<div class="timeline-circle">
+						<div class="timeline-circle-dot"></div>
+					</div>
+					<div class="approach-step">
+						<div class="approach-step-left">
+							<h3 class="approach-number">5</h3>
+						</div>
+						<div class="approach-step-right">
+							<h3 class="approach-title">Implementation and Execution</h3>
+							<div class="approach-text">
+								Using state-of-the-art tools and techniques, we turn strategies into actionable solutions, delivering seamless and efficient execution.
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="workflow-step">
+					<div class="timeline-circle">
+						<div class="timeline-circle-dot"></div>
+					</div>
+					<div class="approach-step">
+						<div class="approach-step-left">
+							<h3 class="approach-number">6</h3>
+						</div>
+						<div class="approach-step-right">
+							<h3 class="approach-title">Continuous Optimization</h3>
+							<div class="approach-text">
+								Post-launch, we monitor performance, gather feedback, and refine strategies to ensure long-term success and impactful results.
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="info">
+		<div class="container">
+			<div class="row">
+				<div class="col-3 info-col">
+					<div class="odometer-item">
+						<div class="odometer-content">
+							<h2 class="odometer" data-target="25">0</h2>
+							<i class="fa-solid fa-plus"></i>
+						</div>
+						<p>Happy Clients</p>
+					</div>
+				</div>
+				<div class="col-3 info-col">
+					<div class="odometer-item">
+						<div class="odometer-content">
+							<h2 class="odometer" data-target="16">0</h2>
+							<i class="fa-solid fa-plus"></i>
+						</div>
+						<p>Completed Projects</p>
+					</div>
+				</div>
+				<div class="col-3 info-col">
+					<div class="odometer-item">
+						<div class="odometer-content">
+							<h2 class="odometer" data-target="10">0</h2>
+							<i class="fa-solid fa-plus"></i>
+						</div>
+						<p>Team Members</p>
+					</div>
+				</div>
+				<div class="col-3 info-col">
+					<div class="odometer-item">
+						<div class="odometer-content">
+							<h2 class="odometer" data-target="3">0</h2>
+							<i class="fa-solid fa-plus"></i>
+						</div>
+						<p>Awards Won</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="team" id="team">
+		<div class="container">
+			<div class="team-title">
+				<div class="team-line"></div>
+				<p>Our Team</p>
+			</div>
+			<h2>Our team of skilled professionals is dedicated to delivering excellence and turning your vision into reality.</h2>
+			<div class="row">
+				<div class="col-4">
+					<div class="team-details">
+						<div class="team-img">
+							<img src="{% static 'img/team_1.png' %}" alt="team-1">
+						</div>
+						<div class="team-text">
+							<h3>Antony Jero</h3>
+							<p>Founder and CEO</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="team-details">
+						<div class="team-img">
+							<img src="{% static 'img/team_2.png' %}" alt="team-2">
+						</div>
+						<div class="team-text">
+							<h3>Dhinakaran</h3>
+							<p>Software Developer</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-4">
+					<div class="team-details">
+						<div class="team-img">
+							<img src="{% static 'img/team_3.png' %}" alt="team-3">
+						</div>
+						<div class="team-text">
+							<h3>Deetchana</h3>
+							<p>Content Creator</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="contact" id="contact">
+		<div class="container">
+			<h2>Let's Get In Touch.</h2>
+			<p>Ready to take your business to the next level? Contact us today for a free consultation and discover how Dady Digital Marketing Services can transform your online presence.</p>
+			<div class="row">
+				<div class="col-6 contact-img-col">
+					<div class="contact-img">
+						<img src="{% static 'img/Call center-pana.png' %}" alt="">
+					</div>
+				</div>
+				<div class="col-6 contact-form-col">
+					<form class="contact-form" action="/contact-form/" method="post">
+						{% csrf_token %}
+						<input type="text" name="first_name" placeholder="First Name" required>
+						<input type="text" name="last_name" placeholder="Last Name" required>
+						<input type="email" name="user_mail" placeholder="Email Address" required>
+						<input type="tel" name="user_number" placeholder="Phone Number" maxlength="10" required>
+						<textarea name="user_message" placeholder="Enter your message here..."></textarea>
+						<div class="contact-btn-div">
+							<button class="contact-btn">Submit</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="subscribe">
+		<div class="container subscribe-content">
+			<h4>Stay Updated with the Latest News!</h4>
+			<p>Subscribe to our newsletter and never miss updates, offers, or exclusive content.</p>
+			<form class="subscribe-form" method="post" action="{% url 'subscribe' %}">
+				{% csrf_token %}
+				<input type="email" name="user_mail" placeholder="Enter your email address" required>
+				<button class="subscribe-btn">Subscribe Now</button>
+			</form>
+			<p>We respect your privacy. Your information is safe with us.</p>
+		</div>
+	</div>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-6 footer-logo-col">
+					<div class="footer-logo">
+						<img src="{% static 'img/DADY_LOGO.png' %}" alt="DADY logo">
+					</div>
+					<p class="footer-content">DADY Digital Marketing Services is committed to empowering businesses with innovative marketing solutions. From strategy to execution, we help brands thrive in the digital world.</p>
+				</div>
+				<div class="col-3 qlink">
+					<div class="footer-qlinks">
+						<h5>Quick Links</h5>
+						<div class="footer-list">
+							<a class="footer-item" href="#">Home</a>
+							<a class="footer-item" href="#about">About</a>
+							<a class="footer-item" href="#services">Services</a>
+							<a class="footer-item" href="#team">Team</a>
+							<a class="footer-item" href="#contact">Contact</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-3 qlink">
+					<h5>Follow Us</h5>
+					<div class="footer-follows">
+						<a class="icon" href="https://www.instagram.com/dady_digital_7/">
+							<i class="fa-brands fa-instagram">&#xf16d;</i>
+						</a>
+						<a class="icon" href="#">
+							<i class="fa-brands fa-facebook-f">&#xf09a;</i>
+						</a>
+						<a class="icon" href="#">
+							<i class="fa-brands fa-x-twitter"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="privacy">
+		<p>© 2024 DADY Digital Marketing Services. All rights reserved.</p>
+	</div>
+	<script>
+		function menuOpen() {
+			var menu_open = document.getElementById("menu-open");
+			menu_open.style.display = "none";
+			var menu_close = document.getElementById("menu-close");
+			menu_close.style.display = "block";
+			var menu_bar = document.getElementById("menu-side-bar");
+			menu_bar.style.display = "block";
+		}
+		function menuClose() {
+			var menu_close = document.getElementById("menu-close");
+			menu_close.style.display = "none";
+			var menu_open = document.getElementById("menu-open");
+			menu_open.style.display = "block";
+			var menu_bar = document.getElementById("menu-side-bar");
+			menu_bar.style.display = "none";
+		}
+	</script>
+	<script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>
